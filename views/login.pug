@@ -1,0 +1,14 @@
+extends layouts/main-layout.pug
+
+block title 
+    title login
+
+block content 
+    h1 login
+    form(action="/login", method="post")
+        input(type="email", name="email")
+        input(type="password", name="password") 
+        button login
+
+    if errorMessage
+        p.errorMessage= errorMessage
