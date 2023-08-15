@@ -1,6 +1,6 @@
 const express = require("express");
 const loginRoutes = require("./routes/login");
-const registerData = require("./routes/register");
+const registerRoutes = require("./routes/register");
 const homeRoutes = require("./routes/home");
 const bodyParser = require("body-parser");
 const session = require('express-session');
@@ -20,7 +20,7 @@ app.use(
 );
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(registerData.routes);
+app.use(registerRoutes);
 app.use(loginRoutes);
 app.use(homeRoutes);
 app.use(logoutRoutes);

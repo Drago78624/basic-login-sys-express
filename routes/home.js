@@ -1,15 +1,10 @@
 const express = require('express');
 
+const authController = require("../controllers/auth")
+
 const router = express.Router()
 
-router.get("/", (req, res, next) => {
-    const isLoggedIn = req.session.isLoggedIn
-    if(isLoggedIn){
-        res.render("home", {userEmail: req.session.userEmail})
-    }else {
-        res.redirect("login")
-    }
-})
+router.get("/", authController.getHome)
 
 module.exports = router
 
